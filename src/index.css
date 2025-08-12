@@ -1,7 +1,7 @@
 :root {
-  --primary: #1E3A8A;
-  --accent: #F97316;
-  --muted: #F3F4F6;
+  --primary: #1e3a8a;
+  --accent: #f97316;
+  --muted: #f3f4f6;
   --card: #ffffff;
   --text: #0f172a;
   --radius: 12px;
@@ -10,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   background: var(--muted);
   color: var(--text);
   direction: rtl;

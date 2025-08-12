@@ -1,23 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import Header from "../header/Header";
 import "./Main.css";
 import Footer from "../Footer/Footer";
+import Accessibility from "../Accessibility/Accessibility";
 
 const Main: React.FC = () => {
   const [showAccessibilityMenu, setShowAccessibilityMenu] = useState(false);
+  const [accessibilityContrast, seAccessibilityContrast] = useState(false);
 
-  // window.addEventListener("scroll", function () {
-  //   const header = document.getElementById("header");
+  useEffect(() => {
+    const root = document.documentElement;
 
-  //   if (window.scrollY > 50) {
-  //     // adjust value as needed
-
-  //     header?.classList.add("scrolled");
-  //   } else {
-  //     header?.classList.remove("scrolled");
-  //   }
-  // });
+    if (accessibilityContrast) {
+      root.style.setProperty("--card", "#000");
+      root.style.setProperty("--text", "#ffffff");
+      root.style.setProperty("--muted", "#0f172a");
+    } else {
+      root.style.setProperty("--card", "#ffffff");
+      root.style.setProperty("--text", "#0f172a");
+      root.style.setProperty("--muted", "#F3F4F6");
+    }
+  }, [accessibilityContrast]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,19 +60,11 @@ const Main: React.FC = () => {
 
       {/* תפריט נגישות */}
       {showAccessibilityMenu && (
-        <div className="accessibility-menu fade-in">
-          <button onClick={() => (document.body.style.fontSize = "larger")}>
-            הגדלת טקסט
-          </button>
-          <button
-            onClick={() => (document.body.style.backgroundColor = "#000")}
-          >
-            ניגודיות גבוהה
-          </button>
-          <button onClick={() => alert("מידע על הנגישות באתר")}>
-            מידע על הנגישות
-          </button>
-        </div>
+        <Accessibility
+          onAccessibilityContrast={() =>
+            seAccessibilityContrast((prev) => !prev)
+          }
+        />
       )}
 
       <section className="hero">
