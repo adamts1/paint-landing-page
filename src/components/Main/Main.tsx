@@ -4,10 +4,16 @@ import Header from "../header/Header";
 import "./Main.css";
 import Footer from "../Footer/Footer";
 import Accessibility from "../Accessibility/Accessibility";
+import Form from "../Form/Form";
 
 const Main: React.FC = () => {
   const [showAccessibilityMenu, setShowAccessibilityMenu] = useState(false);
   const [accessibilityContrast, seAccessibilityContrast] = useState(false);
+
+  const whatsappNumber = "+972525600493"; // your number
+  const message = "שלום, אני רוצה ליצור איתך קשר";
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
   useEffect(() => {
     const root = document.documentElement;
@@ -23,17 +29,7 @@ const Main: React.FC = () => {
     }
   }, [accessibilityContrast]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // const name = e.target['name'].value.trim();
-    // const phone = e.target.phone.value.trim();
-    // if (!name || !phone) {
-    //   alert("אנא מלא שם ומספר טלפון");
-    //   return;
-    // }
-    // alert("תודה! פנייתך נשלחה. נחזור אליך בהקדם.");
-    // e.target.reset();
-  };
+
 
   return (
     <div className="container" dir="rtl">
@@ -49,7 +45,7 @@ const Main: React.FC = () => {
       </button>
 
       <a
-        href="aa"
+        href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-btn"
@@ -171,27 +167,7 @@ const Main: React.FC = () => {
           <p>
             מלא את פרטיך ונחזור אליך עם הצעה תואמת וייעוץ מקצועי ללא התחייבות.
           </p>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="name">שם מלא</label>
-            <input id="name" name="name" placeholder="שם" required />
-            <label htmlFor="phone">טלפון</label>
-            <input id="phone" name="phone" placeholder="05X-XXXXXXX" required />
-            <label htmlFor="message">תיאור קצר של הפרויקט</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="גודל הפרויקט, חוץ/פנים, דחיפות..."
-              required
-            ></textarea>
-            <div className="submit-row">
-              <button type="submit" className="btn-primary">
-                שלח ונחזור אליך
-              </button>
-              <div className="phone-hint">
-                או התקשר: <strong>050-1234567</strong>
-              </div>
-            </div>
-          </form>
+          <Form/>
         </div>
         <div className="side-cards">
           <div className="contact-card">

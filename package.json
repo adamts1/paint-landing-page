@@ -1,7 +1,7 @@
 {
   "name": "landing-page",
   "private": true,
-  "homepage": "https://adamts1.github.io/paint-landing-page/",  
+  "homepage": "https://adamts1.github.io/paint-landing-page/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "flyonui": "^2.3.1",
     "gh-pages": "^6.3.0",
     "react": "^19.1.0",
