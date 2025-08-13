@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Form: React.FC = () => {
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const form = useRef<HTMLFormElement>(null);
 
@@ -13,7 +14,7 @@ const Form: React.FC = () => {
     e.preventDefault();
 
     if (form.current) {
-      console.log(form.current);
+      setLoading(true);
 
       emailjs
         .sendForm(
@@ -23,11 +24,14 @@ const Form: React.FC = () => {
           "8WUpHfYP9_IBLCf4M"
         )
         .then(() => {
+          setLoading(false);
           setSuccess(true);
           setTimeout(() => setSuccess(false), 3000);
           form.current!.reset();
         })
-        .catch(() => console.log("catch"));
+        .catch(() => {
+          setLoading(false);
+        });
     } else {
       console.error("Form ref is not assigned");
     }
@@ -71,6 +75,7 @@ const Form: React.FC = () => {
           placeholder="גודל הפרויקט, חוץ/פנים, דחיפות..."
           required
         ></textarea>
+
         <div className="submit-row">
           <button type="submit" className="btn-primary">
             שלח ונחזור אליך
@@ -80,6 +85,11 @@ const Form: React.FC = () => {
           </div>
         </div>
       </form>
+
+      {loading ? (
+        <span className="spinner"></span>
+      ) : // <div>ssss</div>
+      null}
     </div>
   );
 };

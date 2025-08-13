@@ -7,9 +7,49 @@
   width: 100%;
   color: black;
   height: 50px;
-
 }
 
 .text {
-    margin: auto;
+  margin: auto;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #1e3c72, #2a5298, #fff);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    black calc(100% - 1px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    black calc(100% - 1px)
+  );
+  animation: spin 0.8s linear infinite, gradientShift 2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
