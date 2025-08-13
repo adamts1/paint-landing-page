@@ -4,7 +4,7 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="logo-area">
-        <div className="logo">צ</div>
+        <div className="logo">בס״ד</div>
         <div>
           <div className="logo-title">צביעת בתים ומבנים</div>
           <div className="logo-sub">מקצועיות | אמינות | גימור מושלם</div>

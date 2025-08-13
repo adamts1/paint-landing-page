@@ -10,7 +10,7 @@ const Main: React.FC = () => {
   const [showAccessibilityMenu, setShowAccessibilityMenu] = useState(false);
   const [accessibilityContrast, seAccessibilityContrast] = useState(false);
 
-  const whatsappNumber = "+972525600493"; // your number
+  const whatsappNumber = "+972525600493";
   const message = "שלום, אני רוצה ליצור איתך קשר";
   const encodedMessage = encodeURIComponent(message);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -28,8 +28,6 @@ const Main: React.FC = () => {
       root.style.setProperty("--muted", "#F3F4F6");
     }
   }, [accessibilityContrast]);
-
-
 
   return (
     <div className="container" dir="rtl">
@@ -77,9 +75,6 @@ const Main: React.FC = () => {
             <a className="btn-primary" href="#contact">
               קבל הצעת מחיר חינם
             </a>
-            <a href="#gallery" className="link">
-              צפה בדוגמאות
-            </a>
           </div>
           <div className="features">
             <div className="feature">
@@ -114,33 +109,6 @@ const Main: React.FC = () => {
         </div>
       </section>
 
-      <section id="gallery">
-        <h2>עבודות שלנו — לפני / אחרי</h2>
-        <div className="gallery">
-          <div className="card">
-            <img
-              src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800"
-              alt="before-after"
-            />
-            <div className="label">שדרוג חזית בית פרטי</div>
-          </div>
-          <div className="card">
-            <img
-              src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?q=80&w=800"
-              alt="before-after"
-            />
-            <div className="label">חידוש בניין משרדים</div>
-          </div>
-          <div className="card">
-            <img
-              src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=800"
-              alt="before-after"
-            />
-            <div className="label">צביעת פנים דירה</div>
-          </div>
-        </div>
-      </section>
-
       <section>
         <h2>השירותים שלנו</h2>
         <div className="services">
@@ -167,7 +135,7 @@ const Main: React.FC = () => {
           <p>
             מלא את פרטיך ונחזור אליך עם הצעה תואמת וייעוץ מקצועי ללא התחייבות.
           </p>
-          <Form/>
+          <Form />
         </div>
         <div className="side-cards">
           <div className="contact-card">
