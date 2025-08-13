@@ -86,10 +86,7 @@ const Form: React.FC = () => {
         </div>
       </form>
 
-      {loading ? (
-        <span className="spinner"></span>
-      ) : // <div>ssss</div>
-      null}
+      {loading ? <span className="spinner"></span> : null}
     </div>
   );
 };
