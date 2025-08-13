@@ -1,0 +1,15 @@
+.flex {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  border: 1px solid #28a745;
+  background-color: #28a745;
+  width: 100%;
+  color: black;
+  height: 50px;
+
+}
+
+.text {
+    margin: auto;
+}
