@@ -102,8 +102,7 @@ const Main: React.FC = () => {
         </div>
         <div className="hero-image">
           <img
-            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800
-"
+            src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=800"
             alt="בית צבוע"
           />
         </div>
