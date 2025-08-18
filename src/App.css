@@ -253,6 +253,12 @@ form textarea {
   }
 }
 
+input,
+textarea,
+select {
+  font-size: 16px; /* prevents zoom on focus */
+}
+
 .whatsapp-btn {
   position: fixed;
   bottom: 20px; /* מעל כפתור הנגישות, למשל */
